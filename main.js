@@ -4,11 +4,24 @@ new Vue({
     name: 'Shaun',
     job: 'ninja',
     website: 'https://vuejs.org',
-    websiteTag: '<a href="https://vuejs.org">vuejs.org</a>'
+    websiteTag: '<a href="https://vuejs.org">vuejs.org</a>',
+    age: 25,
+    x: 0,
+    y: 0
   },
   methods: {
     greet: function(time) {
       return 'Good ' + time + ' ' + this.name + '!'
+    },
+    add: function(inc) {
+      this.age += inc;
+    },
+    subtract: function(dec) {
+      this.age -= dec;
+    },
+    updateXY: function(event) {
+      this.x = event.offsetX;
+      this.y = event.offsetY;
     }
   }
 });
