@@ -79,6 +79,10 @@
       <p>{{ greet }}</p>
       <button v-on:click="changeTitle">Change App One Title</button>
       <greeting></greeting>
+      <input type="text" ref="input">
+      <button v-on:click="readRefs">Submit</button>
+      <p>Your fav city: {{ output }}</p>
+      <div ref="test">Test</div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>

@@ -94,11 +94,16 @@ var one = new Vue({
 var two = new Vue({
   el: '#app-two',
   data: {
-    title: 'Vue App Two'
+    title: 'Vue App Two',
+    output: 'Your fav city'
   },
   methods: {
     changeTitle: function() {
       one.title = "Title changed";
+    },
+    readRefs: function() {
+      console.log(this.$refs.test.innerText);
+      this.output = this.$refs.input.value;
     }
   },
   computed: {
