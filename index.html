@@ -46,6 +46,11 @@
       <div v-bind:class="compClasses">
         <span>Ryu</span>
       </div>
+      <br><br><br>
+      <button v-on:click="error = !error">Toggle Error</button>
+      <button v-on:click="success = !success">Toggle Success</button>
+      <p v-if="error">Error</p>
+      <p v-else-if="success">Success</p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>
