@@ -37,6 +37,15 @@
       <p>B: {{ b }}</p>
       <p>Age + A = {{ addToA }}</p>
       <p>Age + B = {{ addToB }}</p>
+      <br><br><br>
+      <div v-on:click="available = !available" v-bind:class="{available: available}">
+        <span>Ryu</span>
+      </div>
+      <button v-on:click="available = !available">Toggle available</button>
+      <button v-on:click="nearby = !nearby">Toggle nearby</button>
+      <div v-bind:class="compClasses">
+        <span>Ryu</span>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>

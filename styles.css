@@ -3,3 +3,13 @@
   height: 10vh;
   border: 1px solid;
 }
+span {
+  background: red;
+}
+.available span {
+  background: green;
+}
+.nearby span:after {
+  content: "nearby";
+  margin-left: 10px;
+}
