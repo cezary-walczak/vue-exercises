@@ -68,6 +68,16 @@
         </div>
       </template>
     </div>
+    <br><br><br>
+    <div id="app-one">
+      <h2>{{ title }}</h2>
+      <p>{{ greet }}</p>
+    </div>
+    <div id="app-two">
+      <h2>{{ title }}</h2>
+      <p>{{ greet }}</p>
+      <button v-on:click="changeTitle">Change App One Title</button>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>
   </body>
