@@ -22,6 +22,9 @@ new Vue({
     updateXY: function(event) {
       this.x = event.offsetX;
       this.y = event.offsetY;
+    },
+    preventLink: function() {
+      var a = document.querySelector('#canvas').textContent = 'Prevented!';
     }
   }
 });
