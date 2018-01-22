@@ -13,7 +13,14 @@ new Vue({
     available: true,
     nearby: false,
     error: false,
-    success: false
+    success: false,
+    name: 'Shaun',
+    cities: ['London', 'Paris', 'Berlin'],
+    ninjas: [
+      {name: 'Ryu', age: 25},
+      {name: 'Yoshi', age: 26},
+      {name: 'Crystal', age: 27}
+    ]
   },
   methods: {
     greet: function(time) {

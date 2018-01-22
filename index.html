@@ -51,6 +51,22 @@
       <button v-on:click="success = !success">Toggle Success</button>
       <p v-if="error">Error</p>
       <p v-else-if="success">Success</p>
+      <br><br><br>
+      <ul>
+        <li v-for="city in cities">{{city}}</li>
+      </ul>
+      <ul>
+        <li v-for="(ninja, index) in ninjas">{{ index }}. {{ ninja.name }} - {{ ninja.age }}</li>
+      </ul>
+      <template v-for="(ninja, index) in ninjas">
+        <h3>{{ index +1 }}. {{ ninja.name }}</h3>
+        <p>{{ ninja.age }}</p>
+      </template>
+      <template v-for="(ninja, index) in ninjas">
+        <div v-for="(val, key) in ninja">
+          <p>{{ key }} - {{ val }}</p>
+        </div>
+      </template>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>
