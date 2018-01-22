@@ -24,6 +24,9 @@
       <br><br><br>
       <div id="canvas" v-on:mousemove="updateXY">X: {{x}}, Y: {{y}}</div>
       <a v-on:click="preventLink" v-bind.prevent:href="website">vuejs.org</a>
+      <br><br><br>
+      <input type="text" placeholder="name" v-on:keyup.tab="logName">
+      <input type="text" placeholder="age" v-on:keyup.alt.enter="logAge">
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>

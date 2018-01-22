@@ -25,6 +25,12 @@ new Vue({
     },
     preventLink: function() {
       var a = document.querySelector('#canvas').textContent = 'Prevented!';
+    },
+    logName: function() {
+      console.log('You entered your name');
+    },
+    logAge: function() {
+      console.log('You entered your age');
     }
   }
 });
