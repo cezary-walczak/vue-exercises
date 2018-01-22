@@ -11,6 +11,10 @@
       <h1>{{ greet('night') }}</h1>
       <p>Name: {{ name }}</p>
       <p>Job: {{ job }}</p>
+      <input type="text" v-bind:value="job">
+      <br><br><br>
+      <a v-bind:href="website">vuejs.org</a>
+      <p v-html="websiteTag"></p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>
