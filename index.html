@@ -30,6 +30,13 @@
       <br>
       <input type="text" placeholder="age" v-model="age">
       <span>{{ age }}</span>
+      <br><br><br>
+      <button v-on:click="a++">Add to A</button>
+      <button v-on:click="b++">Add to B</button>
+      <p>A: {{ a }}</p>
+      <p>B: {{ b }}</p>
+      <p>Age + A = {{ addToA }}</p>
+      <p>Age + B = {{ addToB }}</p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
     <script src="main.js"></script>
