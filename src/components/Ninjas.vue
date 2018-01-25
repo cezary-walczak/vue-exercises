@@ -26,15 +26,15 @@ export default {
       }
     },
     // lifecycle hooks
-    created() {
-      alert('create - fetch data');
-    },
-    mounted() {
-      alert('mount - manipulate dom');  
-    },
-    updated() {
-      alert('updated - rerender');  
-    }
+    // created() {
+    //   alert('create - fetch data');
+    // },
+    // mounted() {
+    //   alert('mount - manipulate dom');  
+    // },
+    // updated() {
+    //   alert('updated - rerender');  
+    // }
 }
 </script>
 
