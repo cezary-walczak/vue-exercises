@@ -1,16 +1,22 @@
 <template lang="pug">
   section#glowna
     h1 {{ title }}
-    ninjas
+    app-header
+    app-ninjas
+    app-footer
     
 </template>
 
 <script>
-import Ninjas from './Ninjas.vue'
+import Header from './components/Header.vue';
+import Ninjas from './components/Ninjas.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   components: {
-    ninjas: Ninjas
+    'app-header': Header,
+    'app-ninjas': Ninjas,
+    'app-footer': Footer
   },
   data () {
     return {
@@ -21,8 +27,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  section#glowna
-    h1
-      color lightgreen
 
 </style>
