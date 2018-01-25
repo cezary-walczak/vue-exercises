@@ -1,20 +1,20 @@
 <template lang="pug">
   section#glowna
     h1 {{ title }}
-    p {{ greeting() }}
+    ninjas
+    
 </template>
 
 <script>
+import Ninjas from './Ninjas.vue'
+
 export default {
-  name: 'app',
+  components: {
+    ninjas: Ninjas
+  },
   data () {
     return {
-      title: 'first vue file'
-    }
-  },
-  methods: {
-    greeting () {
-      return 'hello';
+      title: 'ninja app'
     }
   }
 }
