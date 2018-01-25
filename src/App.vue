@@ -20,6 +20,9 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+  section#glowna
+    h1
+      color lightgreen
 
 </style>

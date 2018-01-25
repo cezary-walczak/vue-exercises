@@ -1,5 +1,6 @@
 <template lang="pug">
   section#ninja
+    h1 list of ninjas
     ul
       li(v-for='ninja in ninjas') {{ ninja }}
 
@@ -16,6 +17,9 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-
+<style lang="stylus" scoped>
+  section#ninja
+    h1
+      color lightgray
+      
 </style>
