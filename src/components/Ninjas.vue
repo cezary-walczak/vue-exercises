@@ -24,6 +24,16 @@ export default {
       deleteNinja () {
         this.ninjas.pop();
       }
+    },
+    // lifecycle hooks
+    created() {
+      alert('create - fetch data');
+    },
+    mounted() {
+      alert('mount - manipulate dom');  
+    },
+    updated() {
+      alert('updated - rerender');  
     }
 }
 </script>
