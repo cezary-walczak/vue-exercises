@@ -22,6 +22,11 @@
               a link2
               a link3
     
+    keep-alive
+      component(v-bind:is='component')
+    button(v-on:click='component = "form-one"') Show form 1
+    button(v-on:click='component = "form-two"') Show form 2
+    
 </template>
 
 <script>
@@ -29,16 +34,21 @@ import Header from './components/Header.vue';
 import Ninjas from './components/Ninjas.vue';
 import Footer from './components/Footer.vue';
 import FormHelper from './components/FormHelper.vue';
+import FormOne from './components/FormOne.vue';
+import FormTwo from './components/FormTwo.vue';
 
 export default {
   components: {
     'app-header': Header,
     'app-ninjas': Ninjas,
     'app-footer': Footer,
-    'form-helper': FormHelper
+    'form-helper': FormHelper,
+    'form-one': FormOne,
+    'form-two': FormTwo
   },
   data () {
     return {
+      component: 'form-two',
       title: 'ninja app',
       ninjas: [
         {name: 'Ryu', speciality: 'Vue Components', show: false},
