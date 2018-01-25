@@ -1,90 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>vue-exercises</title>
-    <link rel="stylesheet" href="styles.css">
   </head>
-
   <body>
-    <div id="app">
-      <h1>{{ greet('night') }}</h1>
-      <p>Name: {{ name }}</p>
-      <p>Job: {{ job }}</p>
-      <input type="text" v-bind:value="job">
-      <br><br><br>
-      <a v-bind:href="website">vuejs.org</a>
-      <p v-html="websiteTag"></p>
-      <br><br><br>
-      <button v-on:click.once="add(1)">Add a year</button>
-      <button v-on:click="subtract(1)">Subtract a year</button>
-      <button v-on:dblclick="add(10)">Add a 10 years</button>
-      <button v-on:dblclick="subtract(10)">Subtract a 10 years</button>
-      <p>My age is: {{ age }}</p>
-      <br><br><br>
-      <div id="canvas" v-on:mousemove="updateXY">X: {{x}}, Y: {{y}}</div>
-      <a v-on:click="preventLink" v-bind.prevent:href="website">vuejs.org</a>
-      <br><br><br>
-      <input type="text" placeholder="name" v-model="name">
-      <span>{{ name }}</span>
-      <br>
-      <input type="text" placeholder="age" v-model="age">
-      <span>{{ age }}</span>
-      <br><br><br>
-      <button v-on:click="a++">Add to A</button>
-      <button v-on:click="b++">Add to B</button>
-      <p>A: {{ a }}</p>
-      <p>B: {{ b }}</p>
-      <p>Age + A = {{ addToA }}</p>
-      <p>Age + B = {{ addToB }}</p>
-      <br><br><br>
-      <div v-on:click="available = !available" v-bind:class="{available: available}">
-        <span>Ryu</span>
-      </div>
-      <button v-on:click="available = !available">Toggle available</button>
-      <button v-on:click="nearby = !nearby">Toggle nearby</button>
-      <div v-bind:class="compClasses">
-        <span>Ryu</span>
-      </div>
-      <br><br><br>
-      <button v-on:click="error = !error">Toggle Error</button>
-      <button v-on:click="success = !success">Toggle Success</button>
-      <p v-if="error">Error</p>
-      <p v-else-if="success">Success</p>
-      <br><br><br>
-      <ul>
-        <li v-for="city in cities">{{city}}</li>
-      </ul>
-      <ul>
-        <li v-for="(ninja, index) in ninjas">{{ index }}. {{ ninja.name }} - {{ ninja.age }}</li>
-      </ul>
-      <template v-for="(ninja, index) in ninjas">
-        <h3>{{ index +1 }}. {{ ninja.name }}</h3>
-        <p>{{ ninja.age }}</p>
-      </template>
-      <template v-for="(ninja, index) in ninjas">
-        <div v-for="(val, key) in ninja">
-          <p>{{ key }} - {{ val }}</p>
-        </div>
-      </template>
-    </div>
-    <br><br><br>
-    <div id="app-one">
-      <h2>{{ title }}</h2>
-      <p>{{ greet }}</p>
-      <greeting></greeting>
-    </div>
-    <div id="app-two">
-      <h2>{{ title }}</h2>
-      <p>{{ greet }}</p>
-      <button v-on:click="changeTitle">Change App One Title</button>
-      <greeting></greeting>
-      <input type="text" ref="input">
-      <button v-on:click="readRefs">Submit</button>
-      <p>Your fav city: {{ output }}</p>
-      <div ref="test">Test</div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
-    <script src="main.js"></script>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
   </body>
 </html>
