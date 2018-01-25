@@ -1,14 +1,19 @@
 <template lang="pug">
   footer
-    p {{ copyright }}
+    p {{ copyright }} {{ title }}
     
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String
+    }
+  },
   data () {
     return {
-      copyright: 'copyright 2017 vue ninjas'
+      copyright: 'copyright 2017'
     }
   }
 }

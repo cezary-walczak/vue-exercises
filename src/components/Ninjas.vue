@@ -4,6 +4,7 @@
       li(v-for='ninja in ninjas' v-on:click='ninja.show = !ninja.show')
         h2 {{ ninja.name }}
         h3(v-show='ninja.show') {{ ninja.speciality }}
+    button(v-on:click='deleteNinja()') delete ninja
 
 </template>
 
@@ -11,13 +12,17 @@
 export default {
     props: {
       ninjas: {
-        type: Array,
-        required: true
+        type: Array
       }
     },
     data () {
       return {
         
+      }
+    },
+    methods: {
+      deleteNinja () {
+        this.ninjas.pop();
       }
     }
 }

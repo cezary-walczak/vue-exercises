@@ -1,9 +1,8 @@
 <template lang="pug">
   section#glowna
-    h1 {{ title }}
-    app-header
+    app-header(v-bind:title='title')
     app-ninjas(v-bind:ninjas='ninjas')
-    app-footer
+    app-footer(v-bind:title='title')
     
 </template>
 

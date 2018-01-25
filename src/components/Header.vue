@@ -1,14 +1,24 @@
 <template lang="pug">
   header
-    h1 {{ title }}
+    h1(v-on:click='changeTitle') {{ title }}
     
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String
+    }
+  },
   data () {
     return {
       title: 'vue ninjas'
+    }
+  },
+  methods: {
+    changeTitle () {
+      this.title = 'Vue Wizards'
     }
   }
 }
