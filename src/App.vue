@@ -1,6 +1,6 @@
 <template lang="pug">
   section#glowna
-    app-header(v-bind:title='title')
+    app-header(v-bind:title='title' v-on:changeTitle='updateTitle($event)')
     app-ninjas(v-bind:ninjas='ninjas')
     app-footer(v-bind:title='title')
     
@@ -28,6 +28,11 @@ export default {
         {name: 'Kami', speciality: 'Webpack', show: false},
         {name: 'Yoshi', speciality: 'Data Diggin', show: false}
       ]
+    }
+  },
+  methods: {
+    updateTitle(updatedTitle) {
+      this.title = updatedTitle;
     }
   }
 }
