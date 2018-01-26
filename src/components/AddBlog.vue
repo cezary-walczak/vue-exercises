@@ -15,6 +15,10 @@
         input(type='checkbox' value='toloksaton' v-model='blog.categories')
         label Karbamazepina
         input(type='checkbox' value='karbamazepina' v-model='blog.categories')
+      #selectboxes
+        label Author
+        select(v-model='blog.author')
+          option(v-for='author in authors') {{ author }} 
     #preview
       h3 Preview blog
       p Blog Title: {{ blog.title }}
@@ -23,6 +27,7 @@
       p Blog Categories:
         ul
           li(v-for='category in blog.categories') {{ category }}
+      p Blog Author: {{ blog.author }}
 
 </template>
 
@@ -33,8 +38,10 @@ export default {
       blog: {
         title: '',
         content: '',
-        categories: []
-      }
+        categories: [],
+        author: ''
+      },
+      authors: ['React Retaliator', 'Angular Avenger', 'Vue Vindicator']
     }
   },
   methods: {
@@ -49,6 +56,7 @@ export default {
     form
       label,
       input,
+      select,
       textarea
         display block
         margin 2vh 2vw
