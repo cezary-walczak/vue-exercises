@@ -1,8 +1,8 @@
 <template lang="pug">
-  section#show-blogs
+  section#show-blogs(v-theme:column='"narrow"')
     h1 All Blog Articles
     .single-blog(v-for='blog in blogs')
-      h2 {{ blog.title }}
+      h2(v-rainbow) {{ blog.title }}
       article {{ blog.body }}
 
 </template>
@@ -11,7 +11,7 @@
 export default {
   data () {
     return {
-      blogs: []
+      blogs: [],
     }
   },
   methods: {
@@ -29,6 +29,7 @@ export default {
 <style lang="stylus" scoped>
   section#show-blogs
     margin 1vh 1vw
+    max-width 100%
     .single-blog
       background #eee
 </style>
