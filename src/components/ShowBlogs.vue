@@ -1,9 +1,9 @@
 <template lang="pug">
-  section#show-blogs(v-theme:column='"narrow"')
+  section#show-blogs(v-theme:column='"wide"')
     h1 All Blog Articles
     .single-blog(v-for='blog in blogs')
-      h2(v-rainbow) {{ blog.title }}
-      article {{ blog.body }}
+      h2(v-rainbow) {{ blog.title | to-uppercase }}
+      article {{ blog.body | snippet }}
 
 </template>
 
