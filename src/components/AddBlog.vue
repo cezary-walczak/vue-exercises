@@ -1,7 +1,7 @@
 <template lang="pug">
   section#add-blog
     h2 Add a new blog post
-    form
+    form(v-if='!submitted')
       label Blog Title:
       input(type='text' v-model.lazy='blog.title' required)
       label Blog Content:
@@ -18,7 +18,10 @@
       #selectboxes
         label Author
         select(v-model='blog.author')
-          option(v-for='author in authors') {{ author }} 
+          option(v-for='author in authors') {{ author }}
+      button(v-on:click.prevent='post()') Add Blog
+    #submitted(v-if='submitted')
+      h3 Thanks for adding your post
     #preview
       h3 Preview blog
       p Blog Title: {{ blog.title }}
@@ -41,11 +44,21 @@ export default {
         categories: [],
         author: ''
       },
-      authors: ['React Retaliator', 'Angular Avenger', 'Vue Vindicator']
+      authors: ['React Retaliator', 'Angular Avenger', 'Vue Vindicator'],
+      submitted: false
     }
   },
   methods: {
-
+    post () {
+      this.$http.post('https://jsonplaceholder.typicode.com/posts', {
+        title: this.blog.title,
+        body: this.blog.content,
+        userId: 1
+      }).then((data) => {
+        console.log(data);
+        this.submitted = true;
+      });
+    }
   }
 }
 </script>
