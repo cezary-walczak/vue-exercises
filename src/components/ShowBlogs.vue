@@ -3,7 +3,7 @@
     input(type='text' placeholder='Search...' v-model='search')
     h1 All Blog Articles
     .single-blog(v-for='blog in filteredBlogs')
-      h2(v-rainbow) {{ blog.title | to-uppercase }}
+      h2(v-rainbow) {{ blog.title | toUppercase }}
       article {{ blog.body | snippet }}
 
 </template>
@@ -31,6 +31,18 @@ export default {
       console.log(data);
       this.blogs = data.body.slice(0, 10);
     });
+  },
+  filters: {
+    toUppercase (value) {
+      return value.toUpperCase();
+    }
+  }, 
+  directives: {
+    rainbow: {
+      bind (el, binding, vnode) {
+        el.style.color = '#' + Math.random().toString().slice(2, 8);
+      }
+    }
   }
 }
 </script>

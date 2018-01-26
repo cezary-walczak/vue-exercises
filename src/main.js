@@ -5,11 +5,11 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource);
 
 // directives
-Vue.directive('rainbow', {
-  bind (el, binding, vnode) {
-    el.style.color = '#' + Math.random().toString().slice(2, 8);
-  }
-});
+// Vue.directive('rainbow', {
+//   bind (el, binding, vnode) {
+//     el.style.color = '#' + Math.random().toString().slice(2, 8);
+//   }
+// });
 
 Vue.directive('theme', {
   bind (el, binding, vnode) {
@@ -26,9 +26,9 @@ Vue.directive('theme', {
 });
 
 // filters
-Vue.filter('to-uppercase', (value) => {
-  return value.toUpperCase();
-});
+// Vue.filter('to-uppercase', (value) => {
+//   return value.toUpperCase();
+// });
 
 Vue.filter('snippet', (value) => {
   return value.slice(0, 100) + '...';
