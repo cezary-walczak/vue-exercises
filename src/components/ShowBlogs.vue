@@ -1,7 +1,8 @@
 <template lang="pug">
   section#show-blogs(v-theme:column='"wide"')
+    input(type='text' placeholder='Search...' v-model='search')
     h1 All Blog Articles
-    .single-blog(v-for='blog in blogs')
+    .single-blog(v-for='blog in filteredBlogs')
       h2(v-rainbow) {{ blog.title | to-uppercase }}
       article {{ blog.body | snippet }}
 
@@ -12,10 +13,18 @@ export default {
   data () {
     return {
       blogs: [],
+      search: ''
     }
   },
   methods: {
     
+  },
+  computed: {
+    filteredBlogs() {
+      return this.blogs.filter((blog) => {
+        return blog.title.match(this.search);
+      });
+    }
   },
   created () {
     this.$http.get('https://jsonplaceholder.typicode.com/posts').then((data) => {
