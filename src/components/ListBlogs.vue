@@ -1,7 +1,7 @@
 <template lang="pug">
-  section#show-blogs(v-theme:column='"wide"')
+  section#list-blogs(v-theme:column='"wide"')
     input(type='text' placeholder='Search...' v-model='search')
-    h1 All Blog Articles
+    h1 Blog Titles
     .single-blog(v-for='blog in filteredBlogs')
       h2(v-rainbow) {{ blog.title | toUppercase }}
       article {{ blog.body | snippet }}
