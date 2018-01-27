@@ -1,10 +1,6 @@
 <template lang="pug">
   section#glowna
-    add-blog
-    hr
-    show-blogs
-    hr
-    list-blogs
+    router-view
     
 </template>
 
