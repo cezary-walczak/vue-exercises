@@ -5,7 +5,7 @@
     .single-blog(v-for='blog in filteredBlogs')
       router-link(v-bind:to='"/blog/" + blog.id')
         h2(v-rainbow) {{ blog.title | toUppercase }}
-      article {{ blog.body | snippet }}
+      article {{ blog.content | snippet }}
 
 </template>
 
@@ -23,9 +23,16 @@ export default {
     
   },
   created () {
-    this.$http.get('https://jsonplaceholder.typicode.com/posts').then((data) => {
-      console.log(data);
-      this.blogs = data.body.slice(0, 10);
+    this.$http.get('https://vue-exercises.firebaseio.com/posts.json').then((data) => {
+      // this.blogs = data.body.slice(0, 10);
+      return data.json();
+    }).then((data) => {
+      var blogsArray = [];
+      for(let key in data) {
+        data[key].id = key;
+        blogsArray.push(data[key]);
+      }
+      this.blogs = blogsArray;
     });
   },
   filters: {

@@ -1,7 +1,10 @@
 <template lang="pug">
   section#single-blog
     h1 {{ blog.title }}
-    article {{ blog.body }}
+    article {{ blog.content }}
+    p Author: {{ blog.author }}
+    ul Categories:
+      li(v-for='category in blog.categories') {{ category }}
 
 </template>
 
@@ -14,9 +17,11 @@ export default {
     }
   },
   created () {
-    this.$http.get('https://jsonplaceholder.typicode.com/posts/' + this.id).then((data) => {
-      console.log(data);
-      this.blog = data.body;
+    this.$http.get('https://vue-exercises.firebaseio.com/posts/' + this.id + '.json').then((data) => {
+      return data.json();
+      // this.blog = data.body;
+    }).then((data) => {
+      this.blog = data;
     });
   }
 }
