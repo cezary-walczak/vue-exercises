@@ -2,7 +2,7 @@
   section#product-list-one
     h2 Product List One
     ul
-      li(v-for='product in products') {{product.name}} {{product.price}}
+      li(v-for='product in saleProducts') {{product.name}} {{product.price}}
 
 </template>
 
@@ -11,6 +11,9 @@ export default {
   computed: {
     products () {
       return this.$store.state.products;
+    },
+    saleProducts () {
+      return this.$store.getters.saleProducts;
     }
   }
 }
