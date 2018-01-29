@@ -1,30 +1,28 @@
 <template lang="pug">
-  section#glowna
-    app-nav
-    router-view
-    
+  main
+    product-list-one(v-bind:products='products')
+    product-list-two(v-bind:products='products')
+
 </template>
 
 <script>
-import AddBlog from './components/AddBlog.vue'
-import ShowBlogs from './components/ShowBlogs.vue'
-import ListBlogs from './components/ListBlogs.vue'
-import Nav from './components/Nav.vue'
+import ProductListOne from './components/ProductListOne.vue'
+import ProductListTwo from './components/ProductListTwo.vue'
 
 export default {
   components: {
-    'add-blog': AddBlog,
-    'show-blogs': ShowBlogs,
-    'list-blogs': ListBlogs,
-    'app-nav': Nav
+    'product-list-one' : ProductListOne,
+    'product-list-two' : ProductListTwo
   },
   data () {
     return {
-
+      products: [
+        {name: 'Banana Skin', price: 20},
+        {name: 'Shiny Star', price: 40},
+        {name: 'Green Shells', price: 60},
+        {name: 'Red Shells', price: 80}
+      ]
     }
-  },
-  methods: {
-
   }
 }
 </script>

@@ -2,15 +2,18 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
-import Routes from './routes'
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
-const router = new VueRouter({
-  routes: Routes,
-  mode: 'history'
-});
+// const router = new VueRouter({
+//   routes: [
+//     { path: '/', component: ShowBlogs },
+//     { path: '/add', component: AddBlog },
+//     { path: '/blog/:id', component: SingleBlog }
+//   ],
+//   mode: 'history'
+// });
 
 // directives
 // Vue.directive('rainbow', {
@@ -47,5 +50,5 @@ export const bus = new Vue();
 new Vue({
   el: '#app',
   render: h => h(App),
-  router: router
+  // router: router
 })
