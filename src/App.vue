@@ -1,7 +1,7 @@
 <template lang="pug">
   main
-    product-list-one(v-bind:products='products')
-    product-list-two(v-bind:products='products')
+    product-list-one
+    product-list-two
 
 </template>
 
